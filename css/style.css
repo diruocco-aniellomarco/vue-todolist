@@ -1,0 +1,30 @@
+.item_to_do {
+    width: 100%;
+    background-color: lightgreen;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-top: 10px;
+}
+.item_left {
+    display: flex;
+    align-items: center;
+}
+
+.delate_botton {
+    color: red;
+    cursor: pointer;
+}
+
+.check_bottom {
+    color: green;
+    cursor: pointer;
+    
+    
+}
+
+.item_title {
+    margin-left: 25px;
+}
