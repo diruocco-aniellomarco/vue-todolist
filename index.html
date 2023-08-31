@@ -18,22 +18,38 @@
     <title>To Do List</title>
 </head>
 <body>
-    <div class="container text-center">
+    <div class="container text-center" id="app">
         <h1>To do list</h1>
         <div class="row justify-content-center">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+
+                <input type="text" 
+                    class="form-control" 
+                    placeholder="Recipient's username" 
+                    aria-label="Recipient's username" 
+                    aria-describedby="button-addon2" 
+                    v-model="message.text" 
+                    @keyup.enter="addList()">
+
+                <button class="btn btn-outline-secondary"
+                        type="button" 
+                        id="button-addon2" 
+                        @click="addList()">Aggiungi</button>
             </div>
             <div class="border-bottom"></div>
-            <div id="app">
+            <div>
 
                 <div class="item_to_do " v-for="(item, index) in toDo">
                     <div class="item_left">
                         <i class="fa-solid fa-check fa-lg check_bottom" @click="checkItem(index)"></i>
 
-                        <h4 class="item_title" v-if="toDo[index].done == false">{{toDo[index].text}}</h4>
-                        <h4 class="item_title text-decoration-line-through" v-else>{{toDo[index].text}}</h4>
+                        <h4 class="item_title" 
+                        v-if="toDo[index].done == false" 
+                        @click="checkItem(index)">{{toDo[index].text}}</h4>
+                        
+                        <h4 class="item_title text-decoration-line-through" 
+                        v-else 
+                        @click="unCheckItem(index)">{{toDo[index].text}}</h4>
 
                         
                     </div>
