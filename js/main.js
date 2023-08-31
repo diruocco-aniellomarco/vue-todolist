@@ -18,5 +18,11 @@ const { createApp } = Vue
             },
         ]
       }
+    },
+
+    methods: {
+        checkItem(index) {
+            this.toDo[index].done = true
+        }
     }
   }).mount('#app')
