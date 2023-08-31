@@ -16,13 +16,18 @@ const { createApp } = Vue
                 text: 'Visita dal medico',
                 done: false,
             },
-        ]
+        ],
+
+        
       }
     },
 
     methods: {
         checkItem(index) {
             this.toDo[index].done = true
+        },
+        deleteItems(index) {
+            this.toDo.splice(index,1);
         }
     }
   }).mount('#app')
